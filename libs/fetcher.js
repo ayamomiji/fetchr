@@ -107,7 +107,8 @@ function parseParamValues (params) {
                         }
                         if (err) {
                             res.status(err.statusCode || 400).json({
-                                message: err.message || 'request failed'
+                                message: err.message || 'request failed',
+                                body: err.response.body
                             });
                             return;
                         }
@@ -138,7 +139,8 @@ function parseParamValues (params) {
                         }
                         if(err) {
                             res.status(err.statusCode || 400).json({
-                                message: err.message || 'request failed'
+                                message: err.message || 'request failed',
+                                body: err.response.body
                             });
                             return;
                         }
